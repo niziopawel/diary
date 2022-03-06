@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_scope :user do
+    authenticated { root to: 'posts#index', as: :autenticated_root }
+    unauthenticated { root to: 'devise/sessions#new', as: :unautenticated_root }
+  end
 end
