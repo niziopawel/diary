@@ -1,5 +1,5 @@
-<div class="columns is-centered">
-  <div class="column is-half">
+<div class="columns is-centered is-mobile">
+  <div class="column is-one-third-desktop is-half-tablet is-three-quarters-mobile">
     <h2 class="title is-2">Log in</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
@@ -24,14 +24,24 @@
         </div>
       <% end %>
 
-      <div class="field is-grouped">
+      <div class="field">
         <div class="control">
-          <%= f.submit "Log in", class: "button is-primary" %>
-        </div>
-        <div class="control">
-          <%= link_to "Sign up", new_registration_path(resource_name), class: "button is-light" %>
+          <%= f.submit "Log in", class: "button is-primary is-fullwidth" %>
         </div>
       </div>
+    <% end %>
+
+    <div class="divider">
+      <hr class="bar" />
+      <span>OR</span>
+      <hr class="bar" />
+    </div>
+
+    <%= button_to user_google_oauth2_omniauth_authorize_path, data: { turbo: false }, class: "button is-fullwidth" do %>
+      <span class="icon is-small">
+        <%= image_tag("google_icon") %>
+      </span>
+      <span>Sign in with Google</span>
     <% end %>
   </div>
 </div>

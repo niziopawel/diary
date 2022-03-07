@@ -37,3 +37,20 @@
 // @import "bulma/sass/layout/section.sass";
 
 @import 'bulma/bulma';
+
+.divider {
+  display: flex;
+  align-items: center;
+}
+
+.divider .bar {
+  flex: auto;
+  border: none;
+  height: 1px;
+  background: #ddd;
+}
+
+.divider span {
+  color: #ddd;
+  padding: 0 0.8rem;
+}
