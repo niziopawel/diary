@@ -1,6 +1,6 @@
 <div id="<%= dom_id(post) %>" class="columns is-mobile">
   <div class="column is-three-quareters-desktop is-half-tablet is-three-quarters-mobile">
-    <h2 class="title is-4">Create post</h2>
+    <h2 class="title is-4"><%= title %></h2>
     <%= form_with(model: post) do |f| %>
       <% if post.errors.any? %>
         <div id="error_explanation" class="content is-small">
@@ -33,7 +33,12 @@
 
       <div class="field">
         <div class="control">
-          <%= f.submit "Save", class: "button is-primary" %>
+          <div class="buttons">
+            <%= f.submit "Save", class: "button is-primary" %>
+            <% if post.persisted? %>
+              <%= link_to 'Go back to posts', posts_path, class: "button is-light" %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
