@@ -1,0 +1,42 @@
+<div id="<%= dom_id(post) %>" class="columns is-mobile">
+  <div class="column is-three-quareters-desktop is-half-tablet is-three-quarters-mobile">
+    <h2 class="title is-4">Create post</h2>
+    <%= form_with(model: post) do |f| %>
+      <% if post.errors.any? %>
+        <div id="error_explanation" class="content is-small">
+          <h3 class="has-text-danger">
+            <%= I18n.t("errors.messages.not_saved",
+                       count: post.errors.count,
+                       resource: post.class.model_name.human.downcase)
+             %>
+          </h3>
+          <ul class="has-text-danger">
+            <% post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :city, class: "label" %>
+        <div class="control">
+          <%= f.text_field :city, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :notice, class: "label" %>
+        <div class="control">
+          <%= f.text_area :notice, class: "textarea" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <%= f.submit "Save", class: "button is-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

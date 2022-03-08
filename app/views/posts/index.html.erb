@@ -1,1 +1,5 @@
-<h1>Posts</h1>
+<div class="content px-4">
+  <%= render 'form', post: @post %>
+  <h1 class="title is-4">Older posts:</h1>
+  <%= render @posts %>
+</div>
