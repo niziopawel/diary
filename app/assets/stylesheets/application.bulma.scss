@@ -36,8 +36,10 @@
 // @import "bulma/sass/layout/hero.sass";
 // @import "bulma/sass/layout/section.sass";
 
-@import 'bulma/bulma';
 
+$navbar-breakpoint: 200px;
+
+@import 'bulma/bulma';
 .divider {
   display: flex;
   align-items: center;

@@ -1,0 +1,18 @@
+<nav class="navbar is-dark is-expanded" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <div class="navbar-item title is-4">TravelDiary</div>
+  </div>
+
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="buttons">
+        <% if current_user.present? %>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "button is-primary" %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path, class: "button is-primary" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "button is-light" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
