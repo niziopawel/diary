@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'faker'
 
 FactoryBot.define do
   factory :user do
-    email { Faker::Internet.email }
-    password { Faker::Internet.password min_length: 8 }
+    email { 'test_user@email.com' }
+    password { 'password' }
+    password_confirmation { 'password' }
   end
 end

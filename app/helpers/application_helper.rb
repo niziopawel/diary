@@ -6,6 +6,6 @@ module ApplicationHelper
 
     return File.read(file_path).html_safe if File.exist?(file_path)
 
-    '(not found)' 
+    '(not found)'
   end
 end
