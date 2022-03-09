@@ -4,7 +4,7 @@
       <p class="card-header-title mb-0">
         <%= post.created_at.strftime("%d/%m/%Y") %>
         <%= post.city.capitalize %>
-        <%= post.formatted_temperature %>
+        <%= formatted_temperature(post) %>
       </p>
       <div class="buttons mr-3">
         <%= link_to "Edit", edit_post_path(post), class: "button is-primary is-small" %>
