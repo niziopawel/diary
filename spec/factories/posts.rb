@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :post do
-    notice { "MyText" }
+    notice { 'MyText' }
     temperature { 1 }
     user { nil }
-    city { "MyString" }
+    city { 'MyString' }
   end
 end

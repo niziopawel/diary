@@ -1,20 +1,22 @@
-<div class="block">
-  <div class="card">
-    <div class="card-header">
-      <p class="card-header-title mb-0">
-        <%= post.created_at.strftime("%d/%m/%Y") %>
-        <%= post.city.capitalize %>
-        <%= post.formatted_temperature %>
-      </p>
-      <div class="buttons mr-3">
-        <%= link_to "Edit", edit_post_path(post), class: "button is-primary is-small" %>
-        <%= button_to "Delete", post_path(post), method: :delete, class: "button is-danger is-small", form: { data: { turbo_confirm: 'Are you sure?' } }  %>
+<% if post.persisted? %>
+  <div class="block">
+    <div class="card">
+      <div class="card-header">
+        <p class="card-header-title mb-0">
+          <%= post.created_at.strftime("%d/%m/%Y") %>
+          <%= post.city.capitalize %>
+          <%= formatted_temperature(post) %>
+        </p>
+        <div class="buttons mr-3">
+          <%= link_to "Edit", edit_post_path(post), class: "button is-primary is-small" %>
+          <%= button_to "Delete", post_path(post), method: :delete, class: "button is-danger is-small", form: { data: { turbo_confirm: 'Are you sure?' } }  %>
+        </div>
       </div>
-    </div>
-    <div class="card-content">
-      <div class="content">
-        <%= post.notice %>
+      <div class="card-content">
+        <div class="content">
+          <%= post.notice %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
