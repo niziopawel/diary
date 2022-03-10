@@ -2,9 +2,9 @@
 
 FactoryBot.define do
   factory :post do
-    notice { 'MyText' }
+    notice { 'Notice' }
     temperature { 1 }
-    user { nil }
-    city { 'MyString' }
+    user { create(:user) }
+    city { 'Warszawa' }
   end
 end

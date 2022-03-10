@@ -5,7 +5,8 @@ require 'net/http'
 module OpenWeather
   class GetCityTemperature
     Result = Struct.new(:success, :errors) do
-      def initialize
+      def initialize(*)
+        super
         self.errors ||= []
       end
     end
@@ -13,12 +14,14 @@ module OpenWeather
 
     API_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
-    def initialize
+    def initialize(city:, unit: 'metric')
+      @city = city
+      @unit = unit
       @result = Result.new
     end
 
-    def call(city_name, unit = 'metric')
-      uri = prepare_uri({ q: city_name, units: unit })
+    def call
+      uri = prepare_uri({ q: @city, units: @unit })
 
       get_temperature(uri)
     end

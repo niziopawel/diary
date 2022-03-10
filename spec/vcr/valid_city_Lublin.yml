@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=token&q=Lublin&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 10 Mar 2022 19:18:54 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '508'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=lublin&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":23,"lat":51},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"base":"stations","main":{"temp":-3.22,"feels_like":-8.08,"temp_min":-4.32,"temp_max":-3.12,"pressure":1037,"humidity":52,"sea_level":1037,"grnd_level":1006},"visibility":10000,"wind":{"speed":3.8,"deg":57,"gust":8.9},"clouds":{"all":0},"dt":1646939601,"sys":{"type":1,"id":1702,"country":"PL","sunrise":1646888022,"sunset":1646929392},"timezone":3600,"id":858785,"name":"Lublin
+        Voivodeship","cod":200}'
+  recorded_at: Thu, 10 Mar 2022 19:18:55 GMT
+recorded_with: VCR 6.0.0

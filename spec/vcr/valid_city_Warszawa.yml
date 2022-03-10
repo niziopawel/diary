@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=token&q=Warszawa&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 10 Mar 2022 19:24:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '462'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=warszawa&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":21.0118,"lat":52.2298},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"base":"stations","main":{"temp":-1.55,"feels_like":-5.88,"temp_min":-3.02,"temp_max":-0.1,"pressure":1034,"humidity":48},"visibility":10000,"wind":{"speed":3.6,"deg":80},"clouds":{"all":0},"dt":1646939789,"sys":{"type":2,"id":2032856,"country":"PL","sunrise":1646888546,"sunset":1646929823},"timezone":3600,"id":756135,"name":"Warsaw","cod":200}'
+  recorded_at: Thu, 10 Mar 2022 19:24:24 GMT
+recorded_with: VCR 6.0.0

@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require 'faker'
-
 FactoryBot.define do
   factory :user do
-    email { 'test_user@email.com' }
+    sequence(:email) { |n| "test_user#{n}@email.com" }
     password { 'password' }
     password_confirmation { 'password' }
   end

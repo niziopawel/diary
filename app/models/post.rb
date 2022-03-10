@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   after_validation :set_temperature, if: -> { city.present? && city_changed? }
 
   def set_temperature
-    result = OpenWeather::GetCityTemperature.new.call(city)
+    result = OpenWeather::GetCityTemperature.new(city: city).call
 
     if result.errors.any?
       result.errors.each { |error| errors.add(*error) }
